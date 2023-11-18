@@ -19,3 +19,7 @@
 ## Setup
 - clone the repo `git clone https://github.com/hashen47/tictactoe-in-go.git`
 - then to go the repo folder and run `go run .`
+
+## Todos
+- [x] create the two player version of the tictactoe game
+- [ ] create the single player version of the game (play with ai) 
