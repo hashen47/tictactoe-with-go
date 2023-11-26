@@ -87,6 +87,7 @@ func (g *Game) showGameStateMsg() {
     case g.gameState == Win || g.gameState == Draw:
         g.gameOverMsg()
     default:
+        g.showInvalidPosErr()
         fmt.Println(`
         ############### 
         | Tic Tac Toe |
@@ -202,6 +203,12 @@ func (g *Game) setPosition() {
     g.prevPositions = append(g.prevPositions, pos - 1)
     g.board[pos - 1] = g.getSymbol()
     g.positionInvalidMsg = ""
+}
+
+func (g *Game) showInvalidPosErr() {
+    if (g.positionInvalidMsg != "") {
+        fmt.Printf("      Err: %v\n", g.positionInvalidMsg)
+    }
 }
 
 func (g *Game) reset() {
